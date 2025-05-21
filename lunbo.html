@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel with Chat</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mylunbo {
+            margin: 20px auto;
+            position: relative;
+            width: 1000px;  /* 父容器的宽度 */
+            height: 470px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;  /* Horizontally center child elements */
+            align-items: center;      /* Vertically center child elements */
+        }
+
+        .lunbo {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;  /* 保证图片居中 */
+        }
+
+
+        .mylunbo ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500%; /* 总宽度 = 5张图片 */
+            display: flex;
+        }
+
+        ul li {
+            float: left;
+            list-style-type: none;
+            display: flex;
+            width: 100%;  /* 每张图片占父容器的100%宽度 */
+        }
+
+        .carousel-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;  /* 左侧部分占据50%的宽度 */
+        }
+
+        .carousel-left img {
+            width: 90%; /* 图片宽度由JS动态调整 */
+            height: auto;   /* 高度自适应，保持比例 */
+            object-fit: contain; /* 保持图片比例，避免拉伸 */
+        }
+
+        .carousel-right {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* Vertically center content */
+            align-items: center;      /* Horizontally center content */
+            height: 100%;             /* Ensure the container takes full height */
+            width: 50%;               /* 右侧部分占据50%的宽度 */
+        }
+        /* 小圆圈样式 */
+        .mylunbo ol {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%); /* 使小圆圈居中 */
+            display: flex;
+        }
+
+        .circle li {
+            list-style-type: none; /* 移除默认的数字编号 */
+            width: 8px;
+            height: 8px;
+            margin: 0 3px;
+            border: 2px solid #CECECE;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="mylunbo">
+    <ul>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/1.png" alt="Image 1">
+            </div>
+            <div class="carousel-right">
+                <div class="question">
+                    <strong>Question:</strong>
+                    <p>Which of the following options correctly identifies the defects in the image? (A) miss (B) broken (C) no defect (D) dirt (E) deformation</p>
+                </div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <p>My analysis based on this image is as follows: Option (A) miss is incorrect as there is no missing part but a broken one. Option (C) no defect is incorrect due to the visible break in the wire. Option (D) dirt is incorrect as there are no visible dirt marks or stains on the wire. Option (E) deformation is incorrect because the wire does not show signs of bending or warping; it is snapped. The wire shows a clear break with separated ends indicating discontinuity in the line. The anomaly region coordinates [(54, 354),(181, 500)] (           ) and the defect type is broken. Likely cause: Mechanical stress or damage leading to the wire breaking at this point. The answer is (B).</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/2.png" alt="Image 2">
+            </div>
+            <div class="carousel-right">
+                <div class="question">
+                    <strong>Question:</strong>
+                    <p>Which of the following options correctly identifies the defects in the image? (A) bent wire, poke insulation (B) missing wire, poke insulation (C) no defect (D) cable swap, poke insulation (E) bent wire, cable swap</p>
+                </div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <p>My analysis based on this image is as follows: Option (B) missing wire is incorrect as all wires are present; Option (C) no defect is incorrect due to visible defects; Option (D) cable swap is incorrect as the wire positions are correct; Option (E) cable swap is incorrect as the wire positions are correct. Coordinates: [(223, 458), (515, 832)]  corresponds to defect type: bent wire, Coordinates: [(496, 724), (580, 953)] corresponds to defect type: poke insulation. The green wire is bent at the top-left corner of the image, and the insulation is poked near the bottom-right corner of the image. Likely cause: Manufacturing defect or damage during handling. The answer is (A).</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/3.png" alt="Image 3">
+            </div>
+            <div class="carousel-right">
+                <div class="question">
+                    <strong>Question:</strong>
+                    <p>Which of the following options correctly identifies the defects in the image? (A) no defect (B) break (C) warp (D) surface damage (E) crack</p>
+                </div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <p>My analysis based on this image is as follows: For option (B), there are no discontinuities or interruptions in the car's body panels. For option (C), the shape of the car is consistent without any distortions or irregular curves.  For option (D), the paint and surface appear uniform without scratches dents or other marks. For option (E), there are no linear separations or splits in the material. The image shows a car with a smooth and continuous surface without any visible breaks warps surface damage or cracks. The answer is (A), the defect type is no defect.</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/4.png" alt="Image 4">
+            </div>
+            <div class="carousel-right">
+                <div class="question">
+                    <strong>Question:</strong>
+                    <p>Please observe the two images: the first image is the one to be evaluated, and the remaining one is normal reference images. Based on the normal image, determine whether the first image contains any defect. The options are: (A) Physical defect (B) no defect (C) Packaging defect (D) Logical defect (E) Labeling defect.</p>
+                </div>
+                <div class="answer">
+                    <strong>Answer:</strong>
+                    <p>The test image and the reference image are very similar, but there is a logical inconsistency between them. In the reference image, the peach is placed in the left compartment with the oranges, while in the test image, the peach is placed in the right compartment with the granola, banana chips, and almonds. This placement is illogical given the arrangement in the reference image. Therefore, the defect is classified as a logical defect. The answer is (D). The defect type is Logical defect.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ol class="circle">
+        <!-- Circle navigation dots will be generated here -->
+    </ol>
+</div>
+<script>
+    function animate(obj, length, callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var step = (length - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+            // 如果已经接近目标位置，直接设置为目标位置，避免最后一小步出现问题
+            if (Math.abs(obj.offsetLeft - length) < Math.abs(step)) {
+                obj.style.left = length + 'px';
+                clearInterval(obj.timer);
+                if (callback) callback();
+            } else {
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }
+        }, 15);
+    }
+    window.addEventListener('load', function () {
+        const lunbo = document.querySelector(".mylunbo");
+        const arrowl = document.querySelector(".arrow-l");
+        const arrowr = document.querySelector(".arrow-r");
+        let num = 0;  // Image number
+        let circle = 0;  // Circle navigation index
+        let flag = true;  // Flag to prevent multiple simultaneous animations
+
+        lunbo.addEventListener('mouseenter', function () {
+            arrowl.style.display = 'block';
+            arrowr.style.display = 'block';
+            clearInterval(timer);  // Clear the timer when hovering over the carousel
+        });
+
+        lunbo.addEventListener('mouseleave', function () {
+            arrowl.style.display = 'none';
+            arrowr.style.display = 'none';
+            timer = setInterval(function () {
+                arrowr.click();  // Auto-play when mouse leaves
+            }, 10000);
+        });
+
+        // Create circle navigation dots
+        const ul = lunbo.querySelector("ul");
+        const ol = lunbo.querySelector("ol");
+        for (let i = 0; i < ul.children.length; i++) {
+            let li = document.createElement("li");
+            li.setAttribute('index', i);
+            ol.appendChild(li);
+            li.onclick = function () {
+                for (let i = 0; i < ol.children.length; i++) {
+                    ol.children[i].className = '';
+                }
+                this.className = 'current';
+                num = circle = this.getAttribute('index');
+                animate(ul, -num * lunbo.offsetWidth);
+            }
+        }
+
+        let child = ul.children[0].cloneNode(true);
+        ul.appendChild(child);
+        ol.children[0].className = 'current';
+
+        // Right arrow click event
+        arrowr.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                if (num == ul.children.length - 1) {
+                    ul.style.left = 0;
+                    num = 0;
+                }
+                num++;
+                animate(ul, -num * lunbo.offsetWidth, function () {
+                    flag = true;
+                });
+                circle++;
+                if (circle == ol.children.length)
+                    circle = 0;
+                setCurrent();
+            }
+        });
+
+        // Left arrow click event
+        arrowl.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                if (num == 0) {
+                    num = ul.children.length - 1;
+                    ul.style.left = -num * lunbo.offsetWidth + 'px';
+                }
+                num--;
+                animate(ul, -num * lunbo.offsetWidth, function () {
+                    flag = true;
+                });
+                circle--;
+                if (circle == -1)
+                    circle = ol.children.length - 1;
+                setCurrent();
+            }
+        });
+
+        var timer = setInterval(function () {
+            arrowr.click();
+        }, 2000);
+
+        function setCurrent() {
+            for (let i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = '';
+            }
+            ol.children[circle].className = 'current';
+        }
+    });
+</script>
+
+</body>
+</html>

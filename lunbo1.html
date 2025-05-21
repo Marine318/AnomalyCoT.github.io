@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel with Chat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+    </style>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mylunbo {
+            margin: 20px auto;
+            position: relative;
+            width: 1000px; /* 父容器的宽度 */
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Horizontally center child elements */
+            align-items: center; /* Vertically center child elements */
+        }
+
+        .lunbo {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto; /* 保证图片居中 */
+        }
+
+
+        .mylunbo ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%; /* 总宽度 = 5张图片 */
+            display: flex;
+        }
+
+        ul li {
+            float: left;
+            list-style-type: none;
+            display: flex;
+            width: 100%; /* 每张图片占父容器的100%宽度 */
+        }
+
+        .carousel-left {
+            display: flex;
+            justify-content: center;  /* 水平居中 */
+            align-items: center;  /* 垂直居中 */
+            width: 50%;  /* 左侧部分占据50%的宽度 */
+        }
+
+        .carousel-left img {
+            width: 100%;  /* 图片宽度设为100%以确保图片填满父容器 */
+            height: auto;  /* 高度自适应，保持比例 */
+            object-fit: contain;  /* 保持图片比例，避免拉伸 */
+        }
+
+        .carousel-right {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+            height: 100%; /* Ensure the container takes full height */
+            width: 50%; /* 右侧部分占据50%的宽度 */
+        }
+
+        /* 小圆圈样式 */
+        .mylunbo ol {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%); /* 使小圆圈居中 */
+            display: flex;
+        }
+
+        .circle li {
+            list-style-type: none; /* 移除默认的数字编号 */
+            width: 8px;
+            height: 8px;
+            margin: 0 3px;
+            border: 2px solid #CECECE;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .container {
+            font-size: 20px;
+            color: black;
+            font-family: 'Cinzel', serif;  /* 设置 Cinzel 字体 */
+        }
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 80px auto;
+            position: relative;
+            line-height: 2;
+        }
+        .eraser {
+            position: absolute;
+            inset: 0;
+        }
+        .text {
+            --p: 30%;
+            color: transparent;
+            background: linear-gradient(to right, transparent var(--p), white calc(var(--p) + 5px));
+            animation: erase 5s forwards linear;
+        }
+        @property --p {
+            syntax: '<percentage>';
+            initial-value: 0%;
+            inherits: false;
+        }
+
+        @keyframes erase {
+            0% {
+                --p: 0%;
+            }
+            100% {
+                --p: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="mylunbo">
+    <ul>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/5.png" alt="Image 1">
+            </div>
+            <div class="carousel-right">
+                <div class="question container">
+                    <div class="box">
+                        <p>
+                            Our dataset consists of eight public datasets and one self-made multi-scenario dataset, all of which are related to IAD content. The samples of all datasets include three categories: No defect, single-defect and multi-defect. Our dataset contains a total of 37,565 pieces, with CoT.
+                        </p>
+                        <p class="eraser">
+                            <span class="text">Our dataset consists of eight public datasets and one self-made multi-scenario dataset, all of which are related to IAD content. The samples of all datasets include three categories: No defect, single-defect and multi-defect. Our dataset contains a total of 37,565 pieces, with CoT.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="carousel-left">
+                <img class="lunbo" src="assets/6.png" alt="Image 2">
+            </div>
+            <div class="carousel-right">
+                <div class="question container">
+                    <div class="box">
+                        <p>
+                            This is the scatter plot of the relevant open-source multimodal multi-model pre-training, lora fine-tuning and full fine-tuning experiments of our dataset. The horizontal axis represents accuracy and the vertical axis represents IoU, which means that the closer to the upper right corner of the graph, the better the effect.
+                        </p>
+                        <p class="eraser">
+                                <span class="text">
+                                    This is the scatter plot of the relevant open-source multimodal multi-model pre-training, lora fine-tuning and full fine-tuning experiments of our dataset. The horizontal axis represents accuracy and the vertical axis represents IoU, which means that the closer to the upper right corner of the graph, the better the effect.
+                                </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ol class="circle">
+        <!-- Circle navigation dots will be generated here -->
+    </ol>
+</div>
+<script>
+    function animate(obj, length, callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var step = (length - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+            // 如果已经接近目标位置，直接设置为目标位置，避免最后一小步出现问题
+            if (Math.abs(obj.offsetLeft - length) < Math.abs(step)) {
+                obj.style.left = length + 'px';
+                clearInterval(obj.timer);
+                if (callback) callback();
+            } else {
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }
+        }, 15);
+    }
+
+    window.addEventListener('load', function () {
+        const lunbo = document.querySelector(".mylunbo");
+        const arrowl = document.querySelector(".arrow-l");
+        const arrowr = document.querySelector(".arrow-r");
+        let num = 0;  // Image number
+        let circle = 0;  // Circle navigation index
+        let flag = true;  // Flag to prevent multiple simultaneous animations
+
+        lunbo.addEventListener('mouseenter', function () {
+            arrowl.style.display = 'block';
+            arrowr.style.display = 'block';
+            clearInterval(timer);  // Clear the timer when hovering over the carousel
+        });
+
+        lunbo.addEventListener('mouseleave', function () {
+            arrowl.style.display = 'none';
+            arrowr.style.display = 'none';
+            timer = setInterval(function () {
+                arrowr.click();  // Auto-play when mouse leaves
+            }, 10000);
+        });
+
+        // Create circle navigation dots
+        const ul = lunbo.querySelector("ul");
+        const ol = lunbo.querySelector("ol");
+        for (let i = 0; i < ul.children.length; i++) {
+            let li = document.createElement("li");
+            li.setAttribute('index', i);
+            ol.appendChild(li);
+            li.onclick = function () {
+                for (let i = 0; i < ol.children.length; i++) {
+                    ol.children[i].className = '';
+                }
+                this.className = 'current';
+                num = circle = this.getAttribute('index');
+                animate(ul, -num * lunbo.offsetWidth);
+            }
+        }
+
+        let child = ul.children[0].cloneNode(true);
+        ul.appendChild(child);
+        ol.children[0].className = 'current';
+
+        // Right arrow click event
+        arrowr.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                if (num == ul.children.length - 1) {
+                    ul.style.left = 0;
+                    num = 0;
+                }
+                num++;
+                animate(ul, -num * lunbo.offsetWidth, function () {
+                    flag = true;
+                });
+                circle++;
+                if (circle == ol.children.length)
+                    circle = 0;
+                setCurrent();
+            }
+        });
+
+        // Left arrow click event
+        arrowl.addEventListener('click', function () {
+            if (flag) {
+                flag = false;
+                if (num == 0) {
+                    num = ul.children.length - 1;
+                    ul.style.left = -num * lunbo.offsetWidth + 'px';
+                }
+                num--;
+                animate(ul, -num * lunbo.offsetWidth, function () {
+                    flag = true;
+                });
+                circle--;
+                if (circle == -1)
+                    circle = ol.children.length - 1;
+                setCurrent();
+            }
+        });
+
+        var timer = setInterval(function () {
+            arrowr.click();
+        }, 2000);
+
+        function setCurrent() {
+            for (let i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = '';
+            }
+            ol.children[circle].className = 'current';
+        }
+    });
+</script>
+
+</body>
+</html>
