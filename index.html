@@ -271,8 +271,10 @@
       </div>
     </div>
     <h4 class="subtitle has-text-centered">
-      <a><b>Dataset information: </b></a>
+      <a><b>Data presentation: </b></a>
     </h4>
+
+  </section>  <p style="text-align:center">  <iframe    src="1.html"    frameborder="0"    width="1000"    height="700"    style="margin: 0px auto 0; display: block;"  ></iframe></p>
     <!-- <div class="text-center mt-5">
       <img id="leaderboard" width="80%" src="./images/vl-rewardbench-leaderboard.png" alt="VL-RewardBench Pipeline">
     </div> -->
@@ -283,7 +285,7 @@
 
     
   
-  </section>  <p style="text-align:center">  <iframe    src="lunbo1.html"    frameborder="0"    width="1000"    height="650"    style="margin: -30px auto 0; display: block;"  ></iframe></p>
+  
   <section class="section"  style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
@@ -443,11 +445,15 @@
     </style>
   </section>
   <div class="columns is-centered has-text-centered">
+    <!-- <h3 class="subtitle has-text-centered">
+      <a><b>Dataset information: </b></a>
+    </h3> -->
     <div class="column is-six-fifths">
-      <h2 class="title is-3">Answer Examples</h2>
+      <h4 class="title is-3">Dataset information</h4>
     </div>
   </div>
-</section>  <p style="text-align:center">  <iframe    src="lunbo.html"    frameborder="0"    width="1000"    height="550"    style="margin: 0 auto; display: block;"  ></iframe></p>
+</section>  <p style="text-align:center">  <iframe    src="lunbo1.html"    frameborder="0"    width="1000"    height="650"    style="margin: -30px auto 0; display: block;"  ></iframe></p>
+<!-- </section>  <p style="text-align:center">  <iframe    src="lunbo.html"    frameborder="0"    width="1000"    height="550"    style="margin: 0 auto; display: block;"  ></iframe></p> -->
   
   <section class="section">
     <!-- Results. -->
@@ -471,10 +477,16 @@
         </div>
         <br> 
         <p>
-          Remarkably, performance on VL-RewardBench shows strong correlation (Pearson's r > 0.9) with downstream MMMU-Pro results when using these models for Best-of-N sampling guidance.
+          The above table is converted into a bar chart:
         </p>
         <div style="text-align: center;">
-          <img id="pipeline_framework" width="90%" src="./images/BoN-correlation.png">     
+          <img id="pipeline_framework" width="90%" src="./images/Model.png">     
+        </div>
+        <p>
+          We selected the Qwen-2.5 model as an example and obtained the accuracies of the 10 datasets we composed respectively in the experiments. The bar chart is presented as follows:
+        </p>
+        <div style="text-align: center;">
+          <img id="pipeline_framework" width="90%" src="./images/Subdataset.png">     
         </div>
       </div>
   </section>
