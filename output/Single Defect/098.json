@@ -1,0 +1,17 @@
+{
+  "image_path": "MVTecAD/zipper/split_teeth/0012.png",
+  "coordinates": "[(463,635),(542,983)]",
+  "type": "split teeth",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)no defect(B)squeezed teeth(C)cracked teeth(D)broken teeth(E)split teeth.",
+    "options": {
+      "A": "no defect",
+      "B": "squeezed teeth",
+      "C": "cracked teeth",
+      "D": "broken teeth",
+      "E": "split teeth"
+    },
+    "Reasoning": "My analysis based on this image is as follows:No other defects such as squeezing, cracking, or breaking are present. The anomaly region coordinates [[(463,635),(542,983)]] show a clear separation in the zipper teeth indicative of splitting. The defect type is split teeth. Likely cause: mechanical stress or material fatigue leading to separation. The answer is (E).",
+    "Answer": "(E)split teeth"
+  }
+}

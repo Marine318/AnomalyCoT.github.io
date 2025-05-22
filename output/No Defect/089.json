@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/good/0233.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)missbolt(B)looseness(C)broken(D)scratch(E)no defect.",
+    "options": {
+      "A": "missbolt",
+      "B": "looseness",
+      "C": "broken",
+      "D": "scratch",
+      "E": "no defect"
+    },
+    "Reasoning": "My analysis based on this image is as follows:All bolts appear securely fastened with no signs of looseness misalignment or breakage. Surface shows no scratches or deformations. Likely cause: Proper manufacturing and handling processes maintained integrity. The answer is (E) The defect type is no defect.",
+    "Answer": "(E)no defect"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "image_path": "car/good/0049.jpg",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)bulge(B)crack(C)break(D)no defect(E)fading.",
+    "options": {
+      "A": "bulge",
+      "B": "crack",
+      "C": "break",
+      "D": "no defect",
+      "E": "fading"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Likely cause: The vehicle appears to be in pristine condition typical for a showroom display. The image shows a Jeep with no visible bulges cracks breaks or fading on the surface. The answer is (D) The defect type is no defect.",
+    "Answer": "(D)no defect"
+  }
+}

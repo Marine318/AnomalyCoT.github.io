@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/electrical_insulator/broken/0479.png",
+  "coordinates": "[(92,283),(107,315)]",
+  "type": "broken",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)miss(B)dirt(C)broken(D)crack(E)no defect.",
+    "options": {
+      "A": "miss",
+      "B": "dirt",
+      "C": "broken",
+      "D": "crack",
+      "E": "no defect"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The defect is not a miss as all components appear to be present. It is not dirt since there are no visible contaminants or foreign materials on the surface. It is not a crack because the separation is too wide and irregular for a crack. No defect is incorrect as there is a clear anomaly. The image shows a clear break in one of the wires connected to the central component indicating a structural failure. The anomaly region coordinates [[(92,283),(107,315)]] and the defect type is broken. Likely cause: mechanical stress leading to wire breakage. The answer is (C).",
+    "Answer": "(C)broken"
+  }
+}

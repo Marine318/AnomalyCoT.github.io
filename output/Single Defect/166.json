@@ -1,0 +1,17 @@
+{
+  "image_path": "fabric/Weaving Defect/0098.jpg",
+  "coordinates": "[(841,1),(953,17)]",
+  "type": "Weaving Defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)Stain(B)no defect(C)Hole(D)Weaving Defect(E)Thread Pull.",
+    "options": {
+      "A": "Stain",
+      "B": "no defect",
+      "C": "Hole",
+      "D": "Weaving Defect",
+      "E": "Thread Pull"
+    },
+    "Reasoning": "My analysis based on this image is as follows:(A) rejected due to absence of discoloration or foreign substance;(B) rejected as image shows clear defect;(C) rejected no visible hole or break in fabric;(E) rejected no evidence of thread being pulled or displaced.The anomaly region coordinates [[(841,1),(953,17)]] show irregularities in the weave pattern inconsistent with the surrounding area.Likely cause: manufacturing flaw during weaving process.The defect type is Weaving Defect.The answer is (D).",
+    "Answer": "(D)Weaving Defect"
+  }
+}

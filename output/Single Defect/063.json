@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/looseness/0267.png",
+  "coordinates": "[(428,191),(469,236)]",
+  "type": "looseness",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)missnut(B)missbolt(C)looseness(D)crack(E)no defect.",
+    "options": {
+      "A": "missnut",
+      "B": "missbolt",
+      "C": "looseness",
+      "D": "crack",
+      "E": "no defect"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Analysis of the entire image shows no signs of cracks missnut or missbolt as all components appear present and in place. Anomaly region coordinates [[(428,191),(469,236)]] indicate a gap between the bolt and nut suggesting looseness. The answer is (C) The defect type is looseness. Likely cause: Wear and tear or improper tightening during assembly.",
+    "Answer": "(C)looseness"
+  }
+}

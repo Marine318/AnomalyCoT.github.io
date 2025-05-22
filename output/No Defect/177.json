@@ -1,0 +1,17 @@
+{
+  "image_path": "MVTecAD/capsule/good/0095.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)no defect(B)poke(C)faulty imprint(D)crack(E)misalignment imprint.",
+    "options": {
+      "A": "no defect",
+      "B": "poke",
+      "C": "faulty imprint",
+      "D": "crack",
+      "E": "misalignment imprint"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The capsule shows no signs of poke, faulty imprint, crack, or misalignment imprint as all text and logos are clear and correctly placed. Likely cause: proper manufacturing process with no visible defects. The answer is (A) The defect type is no defect.",
+    "Answer": "(A)no defect"
+  }
+}

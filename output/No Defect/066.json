@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/good/0192.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)missnut(B)no defect(C)looseness(D)broken(E)scratch.",
+    "options": {
+      "A": "missnut",
+      "B": "no defect",
+      "C": "looseness",
+      "D": "broken",
+      "E": "scratch"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Likely cause: The component appears to be in proper condition with no observable defects. The image shows a metal plate with evenly spaced holes and nuts securely fastened in place without any visible signs of damage or irregularity. The answer is (B) The defect type is no defect.",
+    "Answer": "(B)no defect"
+  }
+}

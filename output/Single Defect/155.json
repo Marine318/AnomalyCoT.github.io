@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/missnut/0223.png",
+  "coordinates": "[(369,179),(388,216)]",
+  "type": "missnut",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)missnut(B)crack(C)no defect(D)broken(E)missbolt.",
+    "options": {
+      "A": "missnut",
+      "B": "crack",
+      "C": "no defect",
+      "D": "broken",
+      "E": "missbolt"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Rejection reasons: (B) No visible crack; (C) Defect identified; (D) Component not broken; (E) All bolts appear to be in place. Analysis: The image shows a component with multiple bolt holes but one hole lacks a nut which should be present as seen in other holes. The defect type is missnut. The anomaly region coordinates are [(369,179),(388,216)]. Likely cause: Manufacturing or assembly error where the nut was omitted. The answer is (A).",
+    "Answer": "(A)missnut"
+  }
+}

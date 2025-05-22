@@ -1,0 +1,17 @@
+{
+  "image_path": "GoodsAD/drink_bottle/cap_open/0023.jpg",
+  "coordinates": "[(1492,716),(1964,842)]",
+  "type": "cap open",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)bottle cracked(B)no defect(C)cap open(D)stain(E)cap half open.",
+    "options": {
+      "A": "bottle cracked",
+      "B": "no defect",
+      "C": "cap open",
+      "D": "stain",
+      "E": "cap half open"
+    },
+    "Reasoning": "The answer is (C). The defect type is cap open. Anomaly region coordinates [[(478,238),(664,326)]] and state \"The defect type is cap open\" because the bottle cap is visibly not secured properly. Rejection reason for (A): no visible cracks on the bottle. Rejection reason for (B): the open cap is a defect. Rejection reason for (D): no visible stains on the bottle or surface. Rejection reason for (E): the cap is not half open but completely detached from its sealing position. Likely cause: the cap was not screwed on tightly during packaging or handling.",
+    "Answer": "(C)cap open"
+  }
+}

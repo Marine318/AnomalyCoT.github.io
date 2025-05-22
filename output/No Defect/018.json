@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/witness_mark/good/1009.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)crack(B)no defect(C)broken(D)looseness(E)miss.",
+    "options": {
+      "A": "crack",
+      "B": "no defect",
+      "C": "broken",
+      "D": "looseness",
+      "E": "miss"
+    },
+    "Reasoning": "My analysis based on this image is as follows:There are no visible cracks breaks looseness or missing parts on the object itself. Likely cause: The pink line is an added mark for inspection purposes not indicative of any structural defect. The image shows a circular object with a pink line across it which appears to be an annotation rather than a defect. The answer is (B) The defect type is no defect.",
+    "Answer": "(B)no defect"
+  }
+}

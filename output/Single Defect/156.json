@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/missnut/0105.png",
+  "coordinates": "[(293,156),(252,203)],[(449,182),(417,241)],[(440,240),(408,288)]",
+  "type": "missnut",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)crack(B)scratch(C)missnut(D)no defect(E)missbolt.",
+    "options": {
+      "A": "crack",
+      "B": "scratch",
+      "C": "missnut",
+      "D": "no defect",
+      "E": "missbolt"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Rejection reasons: (A) crack - no visible cracks in the material; (B) scratch - surface appears smooth without scratches; (D) no defect - presence of missing nuts contradicts this; (E) missbolt - all bolts are present but lack corresponding nuts.  \nAnomaly region coordinates [[(293,156),(252,203)],[(449,182),(417,241)],[(440,240),(408,288)]] indicate missing nuts on the bolts. Likely cause: improper assembly or loss during handling. The defect type is missnut.  \nThe answer is (C).",
+    "Answer": "(C)missnut"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/good/0148.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)no defect(B)broken(C)scratch(D)missbolt(E)missnut.",
+    "options": {
+      "A": "no defect",
+      "B": "broken",
+      "C": "scratch",
+      "D": "missbolt",
+      "E": "missnut"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Likely cause: None as the image shows a complete and intact assembly. All bolts and nuts are present in their designated holes with no signs of breakage scratching or missing components. The answer is (A) The defect type is no defect.",
+    "Answer": "(A)no defect"
+  }
+}

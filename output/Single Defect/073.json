@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/catenary_dropper/miss/0162.png",
+  "coordinates": "[(113,105),(231,365)]",
+  "type": "miss",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)broken(B)no defect(C)looseness(D)miss(E)deformation.",
+    "options": {
+      "A": "broken",
+      "B": "no defect",
+      "C": "looseness",
+      "D": "miss",
+      "E": "deformation"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The upper loop on the wire is missing compared to the lower loop which should be present as a pair Likely cause: manufacturing defect or damage during installation. The anomaly region coordinates [[(113,105),(231,365)]] and the defect type is miss. The answer is (D).",
+    "Answer": "(D)miss"
+  }
+}

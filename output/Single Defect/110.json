@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/missnut/0326.png",
+  "coordinates": "[(148,286),(179,336)],[(312,153),(357,205)]",
+  "type": "missnut",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)missnut(B)crack(C)missbolt(D)no defect(E)looseness.",
+    "options": {
+      "A": "missnut",
+      "B": "crack",
+      "C": "missbolt",
+      "D": "no defect",
+      "E": "looseness"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Rejection reasons: (B) crack - no visible cracks or breaks in the material; (C) missbolt - all bolt positions appear occupied by either bolts or nuts; (D) no defect - presence of missing nuts contradicts this option; (E) looseness - no indication of loose components as all present nuts appear tightly secured. The defect type is missnut with anomaly region coordinates [[(148,286),(179,336)],[(312,153),(357,205)]] indicating missing nuts in those areas. Explanation: The image shows a metal plate with multiple holes designed for bolts and nuts but two holes lack nuts which should be present to secure the assembly. Likely cause: manufacturing oversight or installation error leading to incomplete assembly. The answer is (A).",
+    "Answer": "(A)missnut"
+  }
+}

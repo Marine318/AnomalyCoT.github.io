@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/nut_and_bolt_d/good/0014.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)no defect(B)missbolt(C)scratch(D)looseness(E)broken.",
+    "options": {
+      "A": "no defect",
+      "B": "missbolt",
+      "C": "scratch",
+      "D": "looseness",
+      "E": "broken"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Likely cause: The bracket and its bolts are intact and properly assembled. The image shows a metal bracket with bolts that appear to be securely fastened without any visible signs of damage or irregularities such as scratches looseness or breaks. The answer is (A) The defect type is no defect.",
+    "Answer": "(A)no defect"
+  }
+}

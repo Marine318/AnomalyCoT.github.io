@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/electrical_insulator/broken/1948.png",
+  "coordinates": "[(244,269),(209,313)]",
+  "type": "broken",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)no defect(B)crack(C)scratch(D)broken(E)dirt.",
+    "options": {
+      "A": "no defect",
+      "B": "crack",
+      "C": "scratch",
+      "D": "broken",
+      "E": "dirt"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The image does not exhibit characteristics of a crack scratch or dirt such as linear markings surface irregularities or foreign material deposits. The anomaly region coordinates [[(244,269),(209,313)]] show a clear break in the rod structure indicative of a fracture. Likely cause: Mechanical stress or impact leading to structural failure. The defect type is broken. The answer is (D).",
+    "Answer": "(D)broken"
+  }
+}

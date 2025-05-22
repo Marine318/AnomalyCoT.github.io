@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/witness_mark/good/0276.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)looseness(B)crack(C)scratch(D)no defect(E)miss.",
+    "options": {
+      "A": "looseness",
+      "B": "crack",
+      "C": "scratch",
+      "D": "no defect",
+      "E": "miss"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The image shows a circular object with a pink line across it on a textured background. There are no signs of looseness crack scratch or missing parts. Likely cause: The pink line appears to be an intentional mark for measurement or identification not a defect. The answer is (D) The defect type is no defect.",
+    "Answer": "(D)no defect"
+  }
+}

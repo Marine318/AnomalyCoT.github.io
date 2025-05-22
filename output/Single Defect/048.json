@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/photovoltaic_module/miss/0152.png",
+  "coordinates": "[(260,123),(295,180)],[(169,306),(196,354)]",
+  "type": "miss",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)miss(B)hole(C)no defect(D)broken(E)crack.",
+    "options": {
+      "A": "miss",
+      "B": "hole",
+      "C": "no defect",
+      "D": "broken",
+      "E": "crack"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Option (B) hole rejected because there are no visible holes in the structure. Option (C) no defect rejected because missing cells are evident. Option (D) broken rejected as there are no signs of physical breakage. Option (E) crack rejected since no cracks are visible in the image. The defect type is miss. Anomaly region coordinates [[(260,123),(295,180)],[(169,306),(196,354)]] indicate missing solar cells. Likely cause: manufacturing defect or damage during installation. The answer is (A).",
+    "Answer": "(A)miss"
+  }
+}

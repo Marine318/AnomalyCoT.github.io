@@ -1,0 +1,17 @@
+{
+  "image_path": "MIAD/electrical_insulator/broken/0991.png",
+  "coordinates": "[(166,197),(181,221)]",
+  "type": "broken",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)dirt(B)no defect(C)broken(D)deformation(E)crack.",
+    "options": {
+      "A": "dirt",
+      "B": "no defect",
+      "C": "broken",
+      "D": "deformation",
+      "E": "crack"
+    },
+    "Reasoning": "My analysis based on this image is as follows:Rejection reasons: (A) dirt - no visible accumulation of foreign particles; (B) no defect - evident discontinuity rules this out; (D) deformation - shape remains consistent except at break point; (E) crack - while similar, 'broken' more accurately describes complete separation. Anomaly region coordinates [[(166,197),(181,221)]] indicates a clear break in the continuity of the material at the specified location suggesting structural integrity loss. Likely cause: mechanical stress or impact leading to fracture. The answer is (C). The defect type is broken.",
+    "Answer": "(C)broken"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "image_path": "MVTecAD/capsule/good/0114.png",
+  "coordinates": "NULL",
+  "type": "no defect",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)squeeze(B)no defect(C)chip(D)misalignment imprint(E)crack.",
+    "options": {
+      "A": "squeeze",
+      "B": "no defect",
+      "C": "chip",
+      "D": "misalignment imprint",
+      "E": "crack"
+    },
+    "Reasoning": "My analysis based on this image is as follows:The image shows a capsule with clear and sharp imprints of \"actavis\" and \"500\" with no visible signs of squeeze, chip, misalignment imprint, or crack. Likely cause: The capsule appears to be in standard condition without any physical damage or manufacturing defects. The answer is (B) The defect type is no defect.",
+    "Answer": "(B)no defect"
+  }
+}

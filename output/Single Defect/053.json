@@ -1,0 +1,17 @@
+{
+  "image_path": "GoodsAD/drink_bottle/cap_open/0052.jpg",
+  "coordinates": "[(1566,285),(2048,416)]",
+  "type": "cap open",
+  "conversation": {
+    "Question": "Which of the following options correctly identifies the defects in the image?\n(A)stain(B)cap half open(C)no defect(D)cap open(E)bottle cracked.",
+    "options": {
+      "A": "stain",
+      "B": "cap half open",
+      "C": "no defect",
+      "D": "cap open",
+      "E": "bottle cracked"
+    },
+    "Reasoning": "The answer is (D). The anomaly region coordinates [[(1566,285),(2048,416)]] and the defect type is cap open. The bottle's cap is visibly open, which is not typical for an unopened beverage bottle. Likely cause: the bottle was opened by a consumer or mishandled during distribution.",
+    "Answer": "(D)cap open"
+  }
+}
