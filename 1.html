@@ -43,26 +43,31 @@
 
         .bottom-section .card {
             flex: 1 1 48%;
+            min-height: 550px;
         }
 
         .selector-container {
             display: flex;
             align-items: center;
+            width: 100%;
         }
 
         .selector-container label {
             margin-right: 10px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
-        select, input[type="text"] {
+        select, input[type="text"], input[type="number"] {
             padding: 6px;
             border-radius: 4px;
             border: 1px solid #ccc;
+            flex: 1;
         }
 
         .image-container img {
             width: 100%;
+            max-height: 400px;
             height: auto;
             border-radius: 6px;
         }
@@ -78,7 +83,18 @@
             padding: 10px;
             border-radius: 6px;
             border: 1px solid #ccc;
-            background-color: transparent; /* no background */
+            background-color: transparent;
+        }
+
+        .image-with-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* ImagePath 专用样式 */
+        .full-width-input {
+            width: 100%;
         }
     </style>
 </head>
@@ -100,13 +116,13 @@
         <div class="card">
             <div class="selector-container">
                 <label for="sample-index">Sample Index:</label>
-                <input type="text" id="sample-index" value="2" readonly />
+                <input type="number" id="sample-index" value="2" min="0" />
             </div>
         </div>
         <div class="card">
             <div class="selector-container">
-                <label for="sample-index1">ImagePath</label>
-                <input type="text" id="sample-index1" value="MIAD/ele/001.png" readonly />
+                <label for="total-samples">Total Samples</label>
+                <input type="text" id="total-samples" value="200" readonly />
             </div>
         </div>
     </div>
@@ -114,9 +130,13 @@
     <!-- Bottom Section -->
     <div class="bottom-section">
         <!-- Image Card -->
-        <div class="card">
+        <div class="card image-with-info">
             <div class="image-container">
                 <img src="assets/1.png" alt="Sample Image" />
+            </div>
+            <div class="selector-container">
+                <label for="ImagePath">ImagePath</label>
+                <input type="text" id="ImagePath" value="MIAD/catenary_dropper/999.png" readonly class="full-width-input"/>
             </div>
         </div>
 
