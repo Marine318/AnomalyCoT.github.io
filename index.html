@@ -317,31 +317,31 @@
           <div class="content">
             <div class="requirements-box mb-4">
               <p class="mb-3">
-                Our contributions are summarized as follows:
+                The advantages of our dataset are:
               </p>
               <div class="requirements-list">
-                <span class="requirement">a) We construct AnomalyCoT, a new dataset for testing the comprehensive reasoning capabilities of mainstream MLLMs in the IAD task. To the best of our knowledge, our proposed dataset is the first multimodal CoT dataset in the IAD task. This dataset sets new requirements for the application logic of MLLMs in the industrial field.</span>
-                <span class="requirement">b) We have significantly expanded the scenarios of the IAD task and introduced a new pipeline for generating accurate and rigorous reasoning processes for anomaly detection tasks.</span>
-                <span class="requirement">c) We adopt structured CoT data and conduct fine-tuning experiments on representative MLLMs to comprehensively evaluate the performance of MLLMs on AnomalyCoT and achieve normative analysis of MLLMs in specific tasks.</span>
+                <span class="requirement">a) The first advantage of the dataset lies in its extensive coverage of IAD scenarios.</span>
+                <span class="requirement">b) Another advantage of the dataset is that it unifies the two core tasks of IAD, namely anomaly discrimination and defect classification, to define an end-to-end detection task.</span>
+                <span class="requirement">c) The most significant advantage of our dataset is its interpretable reasoning process.</span>
               </div>
             </div>
   
             <div class="methodology-section">
-              <p class="mb-3">
+              <!-- <p class="mb-3">
                 In order to obtain the final data, we carried out the following steps:
-              </p>
+              </p> -->
               <div class="domains-list mb-4">
                 <div class="domain-item">
                   <span class="domain-number">1.</span>
-                  <span>We collected the public datasets dedicated to studying different IAD tasks, forming a comprehensive IAD scenario. </span>
+                  <span>We achieve substantial growth in both data scale and scenario diversity by systematically integrating and performing unified preprocessing on a wide range of publicly available IAD datasets. </span>
                 </div>
                 <div class="domain-item">
                   <span class="domain-number">2.</span>
-                  <span>We designed a composite IAD task encompassing no defect options and distractors to achieve the synergetic completion of anomaly discrimination and defect classification. By manually annotating a large amount of data and precisely locating anomalous regions in the form of coordinate pairs, we have also designed a general semantic prompt embedded with rich visual information. Combined with QwenVL-Max, we generate a clear and logically rigorous reasoning process to establish a complete CoT data.</span>
+                  <span>We design the dataset with a question-reasoning-answer structure and provide no defect options in each sample's question options, enabling a complete analysis of normal or anomalous samples based on anomaly judgment.</span>
                 </div>
                 <div class="domain-item">
                   <span class="domain-number">3.</span>
-                  <span>We carried out rule-based filtering and iterative updates on the CoT data. On this basis, all the data was manually verified to ensure the accuracy and rationality of the CoT. Finally, we collected 37,565 samples from 59 types of scenarios in 13 public datasets.</span>
+                  <span>To effectively address the ambiguity of decision-making basis in the simple question-and-answer form, we design and generate rigorous reasoning processes by combining accurate visual information of anomalous regions and the rich knowledge contained in large models, ensuring the reliability of the dataset in practical applications .</span>
                 </div>
               </div>
   
@@ -361,16 +361,30 @@
             <div class="text-center mt-5">
               <img id="pipeline_framework" width="80%" src="./images/pipeline_new_00.png" alt="VL-RewardBench Pipeline">
             </div>
-            <br>
-            <br>
 
 
-            <!-- <div class="columns is-centered has-text-centered">
-              <h4 class="title is-4">VL-RewardBench Statistics</h4>
-            </div> -->
             <!-- <div class="text-center mt-5">
-              <img id="leaderboard" width="80%" src="./images/statistics.png" alt="VL-RewardBench Statistics">
+              <img id="pipeline_framework" width="80%" src="./images/data_info.png" alt="VL-RewardBench Pipeline">
             </div> -->
+            <br>
+            <br>
+            <br>
+
+
+            <div class="columns is-centered has-text-centered">
+              <h4 class="title is-4">AnomalyCoT Statistics</h4>
+            </div>
+            <div class="text-center mt-5">
+              <img id="leaderboard" width="80%" src="./images/data_info.png" alt="VL-RewardBench Statistics">
+            </div>
+            <br>
+            <br>
+            <div class="content has-text-justified">
+              <p>
+                Left: The outermost layer shows the datasets that make up AnomalyCoT and the corresponding objects, the middle layer shows the number of different defects, and the innermost layer shows the division of the training set and the test set. Right: The performances of different MLLMs, including pre-trained, LoRA fine-tuned, and full fine-tuned models,  are shown in this figure.
+              </p>
+      
+            <div style="text-align: center;">
           </div>
         </div>
       </div>
@@ -448,11 +462,12 @@
     <!-- <h3 class="subtitle has-text-centered">
       <a><b>Dataset information: </b></a>
     </h3> -->
-    <div class="column is-six-fifths">
+    <!-- <div class="column is-six-fifths">
       <h4 class="title is-3">Dataset information</h4>
-    </div>
+    </div> -->
   </div>
-</section>  <p style="text-align:center">  <iframe    src="lunbo1.html"    frameborder="0"    width="1000"    height="650"    style="margin: -30px auto 0; display: block;"  ></iframe></p>
+
+<!-- </section>  <p style="text-align:center">  <iframe    src="lunbo1.html"    frameborder="0"    width="1000"    height="650"    style="margin: -30px auto 0; display: block;"  ></iframe></p> -->
 <!-- </section>  <p style="text-align:center">  <iframe    src="lunbo.html"    frameborder="0"    width="1000"    height="550"    style="margin: 0 auto; display: block;"  ></iframe></p> -->
   
   <section class="section">
@@ -491,7 +506,7 @@
       </div>
   </section>
   
-  <section class="section">
+  <!-- <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Next Step: How to Advance VL-GenRMs?</h2>
@@ -579,7 +594,7 @@
       }
   
     </style>
-  </section>
+  </section> -->
 
   <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
