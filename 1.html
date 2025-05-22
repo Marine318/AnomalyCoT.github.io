@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Data Viewer Tab UI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <title>Sample Viewer - Card Style</title>
     <style>
         * {
             margin: 0;
@@ -15,15 +14,42 @@
 
         body {
             font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .tab-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .tab-container button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: normal;
+        }
+
+        .tab-container button.selected {
+            border-color: #007BFF;
+            color: #007BFF;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .card {
@@ -58,11 +84,10 @@
 
         .selector-container label {
             margin-right: 10px;
-            font-weight: normal; /* 不加粗 */
-            color: #666666; /* 灰色字体 */
+            font-weight: normal;
+            color: #666;
             white-space: nowrap;
         }
-
 
         select, input[type="text"], input[type="number"] {
             padding: 6px;
@@ -78,28 +103,21 @@
             border-radius: 6px;
         }
 
-        .question-container h4 {
-            margin-top: -5px;
-            margin-bottom: 10px;
-            font-weight: normal; /* 去除加粗 */
-            color: #666666; /* 设置为灰色 */
-        }
-
+        .question-container h4,
         .answer-container h4 {
-            margin-top: 25px;
+            margin-top: 10px;
             margin-bottom: 10px;
-            font-weight: normal; /* 去除加粗 */
-            color: #666666; /* 设置为灰色 */
+            font-weight: normal;
+            color: #666;
         }
 
         .question-container p,
         .answer-container p {
-            letter-spacing: 0.5px; /* 字符之间间距 */
-            line-height: 1.4; /* 行高（垂直间距） */
+            letter-spacing: 0.5px;
+            line-height: 1.4;
             padding: 10px;
             border-radius: 6px;
             border: 1px solid #ccc;
-            background-color: transparent;
         }
 
         .image-with-info {
@@ -108,75 +126,106 @@
             gap: 10px;
         }
 
-        /* ImagePath 专用样式 */
         .full-width-input {
             width: 100%;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- Top Section -->
-    <div class="top-section">
-        <div class="card">
-            <div class="selector-container">
-                <label for="category">Defect Type</label>
-                <select id="category" class="dropdown">
-                    <option value="Single Defect">Single Defect</option>
-                    <option value="No Defect">No Defect</option>
-                    <option value="Multiple Defect">Multiple Defect</option>
-                    <option value="Logical Defect">Logical Defect</option>
-                </select>
-            </div>
-        </div>
-        <div class="card">
-            <div class="selector-container">
-                <label for="sample-index">Sample Index</label>
-                <input type="number" id="sample-index" value="0" min="0"/>
-            </div>
-        </div>
-        <div class="card">
-            <div class="selector-container">
-                <label for="total-samples">Total Samples</label>
-                <input type="text" id="total-samples" value="200" readonly/>
-            </div>
-        </div>
-    </div>
 
-    <!-- Bottom Section -->
-    <div class="bottom-section">
-        <!-- Image Card -->
-        <div class="card image-with-info">
-            <div class="image-container">
-                <img src="pic/1.png" alt="Sample Image"/>
+<!-- Tab Navigation -->
+<div class="tab-container" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="tab-1" id="tab-1-button" class="selected">📊 Data Viewer</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-2" id="tab-2-button">ℹ️ About</button>
+</div>
+
+<!-- Tab: Data Viewer -->
+<div class="tab-content active" id="tab-1" role="tabpanel" aria-labelledby="tab-1-button">
+    <div class="container">
+        <div class="top-section">
+            <div class="card">
+                <div class="selector-container">
+                    <label for="category">Defect Type</label>
+                    <select id="category">
+                        <option value="Single Defect">Single Defect</option>
+                        <option value="No Defect">No Defect</option>
+                        <option value="Multiple Defect">Multiple Defect</option>
+                        <option value="Logical Defect">Logical Defect</option>
+                    </select>
+                </div>
             </div>
-            <div class="selector-container">
-                <label for="ImagePath">ImagePath</label>
-                <input type="text" id="ImagePath" value="MIAD/catenary_dropper/999.png" readonly
-                       class="full-width-input"/>
+            <div class="card">
+                <div class="selector-container">
+                    <label for="sample-index">Sample Index</label>
+                    <input type="number" id="sample-index" value="0" min="0"/>
+                </div>
+            </div>
+            <div class="card">
+                <div class="selector-container">
+                    <label for="total-samples">Total Samples</label>
+                    <input type="text" id="total-samples" value="200" readonly/>
+                </div>
             </div>
         </div>
 
-        <!-- QA Card -->
-        <div class="card">
-            <div class="question-container">
-                <h4><i class="fas fa-question-circle" style="margin-right: 8px; color: #007BFF;"></i>Question</h4>
-                <p></p>
+        <div class="bottom-section">
+            <div class="card image-with-info">
+                <div class="image-container">
+                    <img src="pic/1.png" alt="Sample Image"/>
+                </div>
+                <div class="selector-container">
+                    <label for="ImagePath">ImagePath</label>
+                    <input type="text" id="ImagePath" value="MIAD/catenary_dropper/999.png" readonly class="full-width-input"/>
+                </div>
             </div>
-            <div class="answer-container">
-                <h4><i class="fas fa-lightbulb" style="margin-right: 8px; color: #FFC107;"></i>Analysis</h4>
-                <p></p>
-            </div>
-            <div class="answer-container">
-                <h4><i class="fas fa-check-circle" style="margin-right: 8px; color: #28A745;"></i>Answer</h4>
-                <p></p>
+            <div class="card">
+                <div class="question-container">
+                    <h4><i class="fas fa-question-circle" style="margin-right: 8px; color: #007BFF;"></i>Question</h4>
+                    <p></p>
+                </div>
+                <div class="answer-container">
+                    <h4><i class="fas fa-lightbulb" style="margin-right: 8px; color: #FFC107;"></i>Analysis</h4>
+                    <p></p>
+                </div>
+                <div class="answer-container">
+                    <h4><i class="fas fa-check-circle" style="margin-right: 8px; color: #28A745;"></i>Answer</h4>
+                    <p></p>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
-</body>
+
+<!-- Tab: About -->
+<div class="tab-content" id="tab-2" role="tabpanel" aria-labelledby="tab-2-button">
+    <div class="container">
+        <div class="card">
+            <h3>About</h3>
+            <p>This system is designed for defect sample visualization and QA exploration. Switch defect types and sample indices to inspect specific items. This panel provides metadata and answers based on automated analysis.</p>
+        </div>
+    </div>
+</div>
+
 <script>
+    // tab switch logic
+    const tabButtons = document.querySelectorAll('[role="tab"]');
+    const tabPanels = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabButtons.forEach(b => {
+                b.classList.remove('selected');
+                b.setAttribute('aria-selected', 'false');
+            });
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+
+            btn.classList.add('selected');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+        });
+    });
+
+    // original data logic
     const totalSamplesMap = {
         "Single Defect": 200,
         "No Defect": 200,
@@ -190,7 +239,6 @@
         const index = indexInput.value.padStart(3, '0');
         const total = totalSamplesMap[category] || 0;
 
-        // 更新总数与 max 限制
         document.getElementById('total-samples').value = total;
         indexInput.max = total - 1;
 
@@ -199,7 +247,6 @@
         const jsonPath = `${basePath}.json`;
         const tryExtensions = ['.jpg', '.png'];
 
-        // 尝试加载图像
         function tryLoadImage(i = 0) {
             if (i >= tryExtensions.length) {
                 img.src = '';
@@ -209,14 +256,12 @@
 
             const imgPath = `${basePath}${tryExtensions[i]}`;
             const testImg = new Image();
-            testImg.onload = () => {
-                img.src = imgPath;
-            };
+            testImg.onload = () => img.src = imgPath;
             testImg.onerror = () => tryLoadImage(i + 1);
             testImg.src = imgPath;
         }
 
-        tryLoadImage(); // 从第一个格式开始尝试
+        tryLoadImage();
 
         fetch(jsonPath)
             .then(res => {
@@ -225,22 +270,14 @@
             })
             .then(data => {
                 const conv = data.conversation || {};
-
-                const rawQuestion = conv.Question || 'No question available.';
-
-// 去掉最后一个字符
+                let rawQuestion = conv.Question || 'No question available.';
                 let cleanedQuestion = rawQuestion.slice(0, -1);
-
-// 将第一个 '(' 保留，后续每个 '(' 前插入空格
                 let firstIndex = cleanedQuestion.indexOf('(');
                 if (firstIndex !== -1) {
-                    cleanedQuestion =
-                        cleanedQuestion.slice(0, firstIndex + 1) +
+                    cleanedQuestion = cleanedQuestion.slice(0, firstIndex + 1) +
                         cleanedQuestion.slice(firstIndex + 1).replace(/\(/g, ' (');
                 }
-// 替换 \n 为 <br>
                 cleanedQuestion = cleanedQuestion.replace(/\n/g, '<br>');
-// 应用到页面
                 document.querySelector('.question-container p').innerHTML = cleanedQuestion;
                 document.querySelectorAll('.answer-container p')[1].textContent = conv.Answer || 'No answer.';
                 document.querySelectorAll('.answer-container p')[0].textContent = conv.Reasoning || 'No analysis.';
@@ -258,4 +295,5 @@
     document.getElementById('sample-index').addEventListener('input', updateContent);
     window.addEventListener('DOMContentLoaded', updateContent);
 </script>
+</body>
 </html>
