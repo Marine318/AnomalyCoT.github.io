@@ -122,8 +122,11 @@
 </style>
 
 <body>
-  <nav class="navbar" role="navigation" aria-label="main navigation" style="background: linear-gradient(to right, #87CEEB, #FFC0CB); padding: 0.5rem 0;">
+  <nav class="navbar" role="navigation" aria-label="main navigation" style="background: #ffffff; padding: 0.5rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
     <div class="navbar-brand">
+      <a class="navbar-item" href="./" style="font-weight: bold; font-size: 1.2rem;">
+        AnomalyCoT
+      </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -131,54 +134,41 @@
       </a>
     </div>
     <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <div class="navbar-item has-dropdown is-hoverable">
-
-          <a class="navbar-link">
-           🔥 More Research
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://arxiv.org/html/2308.15366v4">
-              AnomalyGPT
-            </a>
-            <a class="navbar-item" href="https://arxiv.org/abs/2410.09453">
-              MMAD
-            </a>
-            <a class="navbar-item" href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf">
-              MVTec AD 
-            </a>
-            <a class="navbar-item" href="https://arxiv.org/abs/2211.13968">
-              MIAD
-            </a>
-            <!-- <a class="navbar-item" href="https://mm-arxiv.github.io/">
-            Multimodal ArXiv
-             </a>
-            <a class="navbar-item" href="https://m3-it.github.io/">
-              M3IT
-            </a> -->
-          </div>
-        </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://arxiv.org/html/2308.15366v4">
+          AnomalyGPT
+        </a>
+        <a class="navbar-item" href="https://arxiv.org/abs/2410.09453">
+          MMAD
+        </a>
+        <a class="navbar-item" href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf">
+          MVTec AD 
+        </a>
+        <a class="navbar-item" href="https://arxiv.org/abs/2211.13968">
+          MIAD
+        </a>
       </div>
     </div>
   </nav>
 
-
-  <section class="hero" style="background: linear-gradient(to right, #87CEEB, #FFC0CB);">
+  <div style="background-image: url('./background.png'); background-size: cover; background-position: center;">
+  <section class="hero" style="background: transparent;">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- <h1 class="title is-1 publication-title">LLaVA: <span class="is-size-2"><span class="is-size-1">L</span>arge <span class="is-size-1">L</span>anguage <span class="is-size-1">a</span>nd <span class="is-size-1">V</span>ision <span class="is-size-1">A</span>ssistant</span></h1> -->
-            <h1 class="title is-1 publication-title">AnomalyCoT</h1>
-            <h2 class="subtitle is-3 publication-subtitle">A Multi-Scenario Chain-of-Thought
-              Dataset for Multimodal Large Language Models</h2>
+            <h1 class="title is-1 publication-title">AnomalyCoT: A Multi-Scenario Chain-of-Thought
+              Dataset for Multimodal Large Language Models</h1>
+            <!-- <h2 class="subtitle is-3 publication-subtitle">A Multi-Scenario Chain-of-Thought
+              Dataset for Multimodal Large Language Models</h2> -->
             <!-- <h5 class="subtitle is-5 publication-awards">NeurIPS 2025</h5> -->
             <!-- <h5 class="subtitle is-5 publication-awards">NeurIPS 2023 (Oral)</h5> -->
             <div class="is-size-5">
               <!-- Lei Li♡∗, Yuancheng Wei♢∗, Zhihui Xie♡∗, Xuqing Yang♣∗ -->
 <!-- , Yifan Song‡, Peiyi Wang‡, -->
 <!-- Chenxin An♡, Tianyu Liu‡, Sujian Li‡, Bill Yuchen Lin♠, Lingpeng Kong♡, Qi Liu♡ -->
-              <span class="author-block">
+              <!-- <span class="author-block">
               <a href="" style="color:#f68946;font-weight:normal;">Jiaxi Cheng<sup>*</sup></a>,
               </span>
               <span class="author-block">
@@ -233,61 +223,67 @@
             </div>
             <div class="is-size-6 publication-authors">
               <span class="author-block"><sup>†</sup><b>Corresponding Author</b></span>
-            </div>
+            </div> -->
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-database"></i>
-                    </span>
-                    <span>Dataset</span>
-                  </a>
-                </span>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
     </div>
   </section>
  
-
-    <section class="hero teaser" style="background: linear-gradient(to right, #87CEEB, #FFC0CB);">
+    <section class="hero teaser" style="background: transparent; margin-top: -20px;">
       <div class="container is-max-desktop">
         <div class="hero-body">
           <h4 class="subtitle has-text-centered">
-            We introduce a novel multimodal dataset AnomalyCoT, designed to address the limitations of current IAD datasets and facilitate the application of MLLM in real-world IAD tasks. It consists of 37,565 IAD samples with the CoT data and is defined by challenging composite IAD tasks.
+            <span style="display: block; max-width: 850px; margin: 0 auto; line-height: 1.6;">
+              We introduce a novel multimodal dataset AnomalyCoT, designed to address the limitations of current IAD datasets and facilitate the application of MLLM in real-world IAD tasks. It consists of 37,565 IAD samples with the CoT data and is defined by challenging composite IAD tasks.
+            </span>
           </h4>
         </div>
       </div>
     </section>
+    
+    <div class="column has-text-centered" style="margin-top: -20px;">
+      <div class="publication-links">
+        <span class="link-block">
+          <a href="" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="ai ai-arxiv"></i>
+            </span>
+            <span>Paper</span>
+          </a>
+        </span>
+
+        <span class="link-block">
+          <a href="" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+          </a>
+        </span>
+
+        <span class="link-block">
+          <a href="" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-database"></i>
+            </span>
+            <span>Dataset</span>
+          </a>
+        </span>
+      </div>
+    </div>
+    <br>
+    
+  </div>
 
     <br>
     <br>
-  </section>  <p style="text-align:center">  <iframe    src="1.html"    frameborder="0"    width="1150"    height="800"    style="margin: -40px auto 0; display: block;"  ></iframe></p>
+  </section>  <p style="text-align:center">  <iframe    src="1.html"    frameborder="0"    width="1150"    height="800"    style="margin: -50px auto 0; display: block;"  ></iframe></p>
     <!-- <div class="text-center mt-5">
       <img id="leaderboard" width="80%" src="./images/vl-rewardbench-leaderboard.png" alt="VL-RewardBench Pipeline">
     </div> -->
